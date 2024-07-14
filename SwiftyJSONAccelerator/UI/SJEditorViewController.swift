@@ -29,9 +29,9 @@ class SJEditorViewController: NSViewController, NSTextViewDelegate {
         super.viewDidLoad()
         textView.delegate = self
         textView.updateFormat()
-        resetView()
         textView!.lnv_setUpLineNumberView()
         accessControlSelector.addItems(withTitles: AccessControl.allCases.map(\.rawValue))
+        resetView()
         // Do any additional setup after loading the view.
     }
 
@@ -43,9 +43,9 @@ class SJEditorViewController: NSViewController, NSTextViewDelegate {
         companyNameTextField.stringValue = ""
         prefixClassTextField.stringValue = ""
         librarySelector.selectItem(at: 0)
-        accessControlSelector.selectItem(at: 0)
+        accessControlSelector.selectItem(at: 2)
         modelTypeSelectorSegment.selectSegment(withTag: 0)
-        variablesOptionalCheckbox.state = .on
+        variablesOptionalCheckbox.state = .off
         separateCodingKeysCheckbox.state = .on
         generateInitialiserFunctionCheckbox.state = .on
         generateInitialiserFunctionCheckbox.isEnabled = false

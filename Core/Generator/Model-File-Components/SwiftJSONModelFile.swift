@@ -87,7 +87,7 @@ struct SwiftJSONModelFile: ModelFile {
         if !accessControl.declarationPrefix.isEmpty {
             declrationPrefix = "\(accessControl.declarationPrefix) "
         }
-        return "\(declrationPrefix)var \(name): \(type)\(optionalSuffix)"
+        return "\(declrationPrefix)let \(name): \(type)\(optionalSuffix)\n"
     }
 
     /// Generate the variable declaration string

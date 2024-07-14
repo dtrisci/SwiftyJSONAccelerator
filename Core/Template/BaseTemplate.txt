@@ -2,24 +2,25 @@
 //  {OBJECT_NAME}.swift
 //
 //  Created by __NAME__ on {DATE}
-//  Copyright (c) __MyCompanyName__. All rights reserved.
+//  Copyright (c) Eurobet s.r.l.. All rights reserved.
 //
 
 import Foundation
 
-{ACCESS_CONTROL}{OBJECT_KIND} {OBJECT_NAME}: Codable {
-
-  enum CodingKeys: String, CodingKey {
+{ACCESS_CONTROL} {OBJECT_KIND} {OBJECT_NAME}: Decodable {
+    
+    enum CodingKeys: String, CodingKey {
 {STRING_CONSTANT}
-  }
-
+    }
+    
+    // MARK: - Properties
+    
 {DECLARATION}
-{INITIALIZER_FUNCTION_DECLRATION}
-{INITIALISER_FUNCTION_ASSIGNMENT}
-{INITIALISER_FUNCTION_END}
-  {ACCESS_CONTROL}{REQUIRED}init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
-{INITIALIZER}
-  }
+    
+    // MARK: - Intialization methods
 
+    {ACCESS_CONTROL}{REQUIRED} init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+{INITIALIZER}
+    }
 }

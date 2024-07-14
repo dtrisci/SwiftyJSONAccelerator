@@ -11,7 +11,7 @@ import Foundation
 extension FileGenerator {
     static func generateFileContentWith(_ modelFile: ModelFile, configuration: ModelGenerationConfiguration) -> String {
         var content = try! loadFileWith("BaseTemplate")
-        let singleTab = "  ", doubleTab = "    "
+        let singleTab = "    ", doubleTab = "        "
         let accessPrefix = modelFile.accessControl.declarationPrefix
         content = content.replacingOccurrences(of: "{OBJECT_NAME}", with: modelFile.fileName)
         content = content.replacingOccurrences(of: "{DATE}", with: todayDateString())
